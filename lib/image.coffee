@@ -22,6 +22,18 @@ exports.getThumb = (fileName) =>
 exports.getPictures = ->
   return fs.readdirSync("#{imagePath}")  
 
+exports.uploadPicture = (req, res) ->
+  image = req.files.image
+  unless image?.type is "image/jpeg" or "image/png"
+    res.redirect "/post"
+
+  data = fs.readFileSync image.path
+  ext = exports.getExtension(image.name)  
+  md5Name = "#{md5(data)}#{ext}"
+  newPath =  "#{imagePath}/#{md5Name}"
+  fs.renameSync req.files.image.path, newPath
+  exports.generateThumb md5Name, (err, image) ->
+    res.redirect "/post"
 
 exports.generateThumb = (fileName, cb ) =>
   ext = exports.getExtension(fileName)

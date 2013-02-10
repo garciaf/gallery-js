@@ -42,36 +42,7 @@ app.configure ->
 app.configure "dev", ->
   app.use express.errorHandler()
 
-
-getExtension = (filename) ->
-  i = filename.lastIndexOf(".")
-  (if (i < 0) then "" else filename.substr(i))
-
-app.get "/pictures", (req, res) ->
-  
-  pictures = fs.readdirSync("#{imagePath}")
-  for fileName in pictures
-    do (fileName) =>
-
-      imageHandler.generateThumb fileName, (err, res)->
-        if err? then console.log err
-  res.send config
-
-app.post "/file", (req, res) ->
-  image = req.files.image
-  unless image?.type is "image/jpeg"
-    res.send 404 
-  data = fs.readFileSync image.path
-  
-
-  ext = imageHandler.getExtension(image.name)  
-  md5Name = "#{md5(data)}#{ext}"
-  console.log ext
-  newPath =  "#{imagePath}/#{md5Name}"
-  console.log newPath
-  fs.renameSync req.files.image.path, newPath
-  imageHandler.generateThumb md5Name, (err, image) ->
-    res.redirect "/"
+app.post "/file", imageHandler.uploadPicture
 
 app.get "/post", routes.post
 
