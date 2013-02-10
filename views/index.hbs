@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+  <div class= "span12">
+    <div class = "hero-unit">
+ 	<h1>GalleryJs</h1>
+  <p class="lead">The simpliest way to share and host picture</p>
+ </div>
+  {{#each images }}
+  <a class="fancybox" rel="group" href="upload/image/{{this}}" >
+      <img src="upload/thumb/{{this}}" class="img-polaroid" />
+  </a>
+  {{/each}}
+  </div>
+  </div>
+
+</div>
+ 
