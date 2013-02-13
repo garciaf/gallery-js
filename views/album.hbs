@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+  <div class= "span12">
+    <div class = "hero-unit">
+  <h1 class="text-center">{{name}}</h1>
+ </div>
+ <ul class="thumbnails">
+  {{#each images }}
+  <li>
+    <a class="fancybox" rel="group" href="/upload/{{path}}" >
+      <img src="/upload/{{thumb}}" class="img-rounded" />
+    </a>
+  </li>
+  {{/each}}
+  </ul>
+  </div>
+  </div>
+</div>
+ 
