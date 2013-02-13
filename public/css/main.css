@@ -857,6 +857,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus{color:#ffffff;text-decor
 .affix{position:fixed;}
 #content{height:600px;}
 #mapView{height:100%;}
+.bwWrapper{position:relative;display:block;}
 #departView{height:100%;}
 #map{height:200px;margin-top:-20px;}
 #updates{position:absolute;right:20px;bottom:20px;}

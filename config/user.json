@@ -1,5 +1,4 @@
 {
-	"upload_folder": "public/upload/image",
-	"thumb_folder": "public/upload/thumb",
+	"upload_folder": "public/upload/",
 	"thumb_size" : 256
 }

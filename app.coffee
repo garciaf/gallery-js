@@ -16,7 +16,7 @@ lessMiddleware = require 'less-middleware'
 formidable = require('formidable')
 app = express()
 app.configure ->
-  app.set "port", process.env.PORT or 3000
+  app.set "port", process.env.PORT or 3300
   app.set "views", "#{__dirname}/views"
   app.set "view engine", "hbs"
   app.set 'view options',
@@ -42,9 +42,13 @@ app.configure ->
 app.configure "dev", ->
   app.use express.errorHandler()
 
-app.post "/file", imageHandler.uploadPicture
+app.post "/file", routes.save
 
 app.get "/post", routes.post
+
+app.get "/albums", routes.albums
+
+app.get "/albums/:folder", routes.album
 
 app.get "/", routes.index
 
