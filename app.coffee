@@ -1,6 +1,5 @@
 express = require "express"
 routes = require "./routes"
-imageHandler = require "#{__dirname}/lib/image"
 http = require "http"
 path = require "path"
 fs = require "fs"
