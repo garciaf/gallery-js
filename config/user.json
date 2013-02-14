@@ -1,4 +1,6 @@
-{
-	"upload_folder": "public/upload/",
-	"thumb_size" : 256
-}
+[{
+  "id": 1,
+  "username": "admin",
+  "password": "admin",
+  "mail": "fab0670312047@gmail.com"
+}]

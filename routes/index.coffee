@@ -1,15 +1,18 @@
 fs = require "fs"
 Picture = require "#{__dirname}/../lib/picture"
 Album = require "#{__dirname}/../lib/album"
+config = require "#{__dirname}/../config/config.json"
 
 exports.index = (req, res) ->
   res.render "index",
+    title: config.title
+    description: config.description
 
 exports.albums = (req, res) ->
   Album.find (err, albums)->
     res.render "albums",
       name: "Albums"
-      title: "Albums - GalleryJs"
+      title: config.title
       albums: albums
 
 exports.album = (req, res) ->
@@ -17,7 +20,7 @@ exports.album = (req, res) ->
     albumName = req.params.folder
     res.render "album",
       name: albumName
-      title: "#{albumName} - GalleryJs"
+      title: config.title
       images: pictures
 
 exports.save = (req, res) ->
@@ -28,4 +31,5 @@ exports.save = (req, res) ->
     res.redirect "/post"
 
 exports.post = (req, res) ->
-  res.render "post"
+  res.render "post",
+    title: config.title

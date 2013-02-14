@@ -4,7 +4,7 @@
   _ = require 'underscore'
   im = require 'imagemagick'
   async = require 'async'
-  config = require "#{__dirname}/../config/user.json"
+  config = require "#{__dirname}/../config/config.json"
   Picture = require "#{__dirname}/picture"
   
   class Album

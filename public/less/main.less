@@ -1,13 +1,15 @@
 @import "bootstrap/bootstrap.less";
 @import "../css/jquery.fancybox.css";
 
-
+#content {
+  padding-bottom: 2*@baseLineHeight;
+}
 .footer {
   text-align: center;
-  padding: 30px 0;
-  margin-top: 70px;
+  padding-bottom: 10px 0;
+  margin-top: 60px;
   border-top: 1px solid @grayDark;
-  background-color: @grayLighter;
+  background-color: lighten(@navbarBackground, 6%);
 }
 
 .footer a {
@@ -39,53 +41,22 @@
 //
 // Variables
 // --------------------------------------------------
-#content{
-    height: 600px;
-}
 
 // Global values
 // --------------------------------------------------
-#mapView{
-    height: 100%;
-}
-.bwWrapper {
+.bwWrapper{
     position:relative;
     display:block;
-}
-#departView{
-    height: 100%
-}
-#map {
-  height: 200px;
-  margin-top: -@baseLineHeight;
+    img {
 
+    }
 }
 #updates{
     position: absolute;
     right: @baseLineHeight;
     bottom: @baseLineHeight;
 }
-#fullscreen{
-    z-index: 40;
-    display: block;
-    position: relative;
-    left: @baseLineHeight;
-    top: 2*@baseLineHeight;
-}
-#stations{
-    height: 70%;
-}
-.main-timer{
-  float: left;
-  display: block;
-  margin-left: ((@navbarHeight - @baseLineHeight) / 2); 
-  // Vertically center the text given @navbarHeight
-  padding: ((@navbarHeight - @baseLineHeight) / 2) 5px ((@navbarHeight - @baseLineHeight) / 2);
-  font-size: @fontSizeLarge;
-  font-weight: 200;
-  color: @grayDark;
-  text-shadow: 0 1px 0 @navbarBackgroundHighlight;
-}
+
 @colwidth: 250px;
 .row  {
 
@@ -132,6 +103,7 @@
 
 // Accent colors
 // -------------------------
+@lightBlue:             #FEFFEF;
 @blue:                  #049cdb;
 @blueDark:              #0064cd;
 @green:                 #46a546;
@@ -159,9 +131,10 @@
 @sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 @serifFontFamily:       Georgia, "Times New Roman", Times, serif;
 @monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+@twitterFontFamily:     "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
 
 @baseFontSize:          14px;
-@baseFontFamily:        @sansFontFamily;
+@baseFontFamily:        @serifFontFamily;
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
@@ -225,7 +198,7 @@
 @inputBorder:                   #ccc;
 @inputBorderRadius:             @baseBorderRadius;
 @inputDisabledBackground:       @grayLighter;
-@formActionsBackground:         #f5f5f5;
+@formActionsBackground:         @white;
 @inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
 
 
@@ -293,12 +266,12 @@
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
 @navbarHeight:                    40px;
-@navbarBackgroundHighlight:       #ffffff;
+@navbarBackgroundHighlight:       @white;
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
 @navbarBorder:                    darken(@navbarBackground, 12%);
 
-@navbarText:                      #777;
-@navbarLinkColor:                 #777;
+@navbarText:                      @black;
+@navbarLinkColor:                 @grayDarker;
 @navbarLinkColorHover:            @grayDark;
 @navbarLinkColorActive:           @gray;
 @navbarLinkBackgroundHover:       transparent;

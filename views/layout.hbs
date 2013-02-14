@@ -9,15 +9,26 @@
   <body>
   	<header class="navbar">
     <div class="navbar-inner navbar-fixed-top ">
-      <a class="brand" href="/"><i class="icon-camera-retro"></i> GalleryJs</a>
+      <a class="brand" href="/"><i class="icon-camera-retro"></i> {{title}}</a>
       <ul class="nav">
         <li><a href="/albums">Gallery</a></li>
-        <li><a href="/post">Post</a></li>
+        <li><a href="/admin/post">Admin</a></li>
       </ul>
+      <ul class="nav pull-right">
+            <li id="fat-menu" class="dropdown">
+              <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/post">Post</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
     </div>
   </header>
+  <div id="content">
   	{{{body}}}
-    <footer class="footer">
+  </div>
+    <footer class="footer navbar-fixed-bottom">
       <div class="container">
         <ul class="footer-links">
           <li><a href="http://twitter.com/FabbookFr"><i class="icon-twitter icon-2x"></i></a></li>
@@ -26,6 +37,7 @@
           <li class="muted">·</li>
           <li><a href="https://plus.google.com/u/0/100538506120158032985/posts"><i class="icon-google-plus icon-2x"></i></a></li>
         </ul>
+
       </div>
     </footer>
   	 <!-- Add jQuery library -->
@@ -44,9 +56,11 @@
   <!-- Add Media helper (this is optional) -->
   <script type="text/javascript" src="/js/source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
   <script type="text/javascript" src="/js/jQuery.BlackAndWhite.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
+    $('.dropdown-toggle').dropdown()
     $(".fancybox").fancybox({
     helpers : {
       title : {

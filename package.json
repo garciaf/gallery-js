@@ -1,6 +1,6 @@
 {
   "name": "fabfotojs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -16,6 +16,10 @@
     "imagemagick": "*",
     "async": "*",
     "less-middleware": "*",
+    "forms": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "connect-flash": "*",
     "underscore": "*"
 
   }

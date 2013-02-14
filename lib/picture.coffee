@@ -5,7 +5,7 @@
   _ = require 'underscore'
 
   async = require 'async'
-  config = require "#{__dirname}/../config/user.json"
+  config = require "#{__dirname}/../config/config.json"
   
   class Picture
 

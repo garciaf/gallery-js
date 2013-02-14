@@ -6,11 +6,9 @@
  </div>
 <ul class="thumbnails">
   {{#each albums}}
-  <li>
-    <div class="thumbnail">
-      <a class="bwWrapper" href="/albums/{{name}}"><img class="img-rounded" src="/upload/{{pictures.thumb}}"/></a>
-      <h3 class="text-center">{{name}}</h3>
-    </div>
+  <li class="thumbnail">
+    <a class="bwWrapper img-rounded" href="/albums/{{name}}"><img class="img-rounded" src="/upload/{{pictures.thumb}}"/></a>
+    <h3 class="text-center">{{name}}</h3>
   </li>
   {{/each}}
 </ul>

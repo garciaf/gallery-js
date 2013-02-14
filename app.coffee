@@ -1,14 +1,11 @@
 express = require "express"
 routes = require "./routes"
+security= require './routes/security'
+passport = require 'passport'
+flash = require 'connect-flash'
 http = require "http"
 path = require "path"
-fs = require "fs"
-util = require 'util'
-md5 = require 'MD5'
-im = require 'imagemagick'
-config = require "#{__dirname}/config/user.json"
-thumbPath = "#{__dirname}/#{config.thumb_folder}"
-imagePath = "#{__dirname}/#{config.upload_folder}"
+auth = require ('./auth')
 
 
 lessMiddleware = require 'less-middleware'
@@ -21,13 +18,19 @@ app.configure ->
   app.set 'view options',
     layout: "layout"
   app.use express.favicon()
-  app.use express.logger("dev")
   app.use express.bodyParser(
     keepExtensions: true
   )    
+  app.use express.logger()
+  app.use express.cookieParser()
   app.use express.methodOverride()
-  app.use express.cookieParser("your secret here")
-  app.use express.session()
+  app.use express.session(secret: "keyboard cat")
+  app.use flash()
+  
+  # Initialize Passport!  Also use passport.session() middleware, to support
+  # persistent login sessions (recommended).
+  app.use passport.initialize()
+  app.use passport.session()
   app.use app.router
   app.use lessMiddleware(
     dest: "#{__dirname}/public/css"
@@ -41,11 +44,19 @@ app.configure ->
 app.configure "dev", ->
   app.use express.errorHandler()
 
-app.post "/file", routes.save
+app.all "/admin/*", auth.EnsureAuthenticated
 
-app.get "/post", routes.post
+app.post "/admin/file", routes.save
+
+app.get "/admin/post", routes.post
 
 app.get "/albums", routes.albums
+
+app.get "/login", security.login
+
+app.post "/login", security.authenticate, routes.post
+
+app.get "/logout", security.logout
 
 app.get "/albums/:folder", routes.album
 
