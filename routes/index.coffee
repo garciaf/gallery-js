@@ -9,12 +9,15 @@ exports.albums = (req, res) ->
   Album.find (err, albums)->
     res.render "albums",
       name: "Albums"
+      title: "Albums - GalleryJs"
       albums: albums
 
 exports.album = (req, res) ->
   Picture.find {folder: req.params.folder}, (err, pictures) ->
+    albumName = req.params.folder
     res.render "album",
-      name: req.params.folder
+      name: albumName
+      title: "#{albumName} - GalleryJs"
       images: pictures
 
 exports.save = (req, res) ->

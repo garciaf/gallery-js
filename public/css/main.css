@@ -1163,7 +1163,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus{color:#ffffff;text-decor
 .invisible{visibility:hidden;}
 .affix{position:fixed;}
 .footer{text-align:center;padding:30px 0;margin-top:70px;border-top:1px solid #333333;background-color:#eeeeee;}
-.footer a{color:#222222;}
+.footer a{color:#222222;}.footer a:hover{text-decoration:none;color:#0064cd;}
 .footer p{margin-bottom:0;color:#777;}
 .footer-links{margin:10px 0;}
 .footer-links li{display:inline;padding:0 2px;}
