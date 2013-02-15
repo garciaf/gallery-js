@@ -3,11 +3,15 @@
 # 
 form = require("../form/login")
 auth = require("../auth")
+config = require "#{__dirname}/../config/config.json"
+
 
 exports.login = (req, res) ->
   res.render "admin/login",
     form: form.LoginForm.toHTML()
     title: 'login'
+    brand: config.title
+
 
 exports.authenticate =  auth.passport.authenticate("local",
   successRedirect: '/admin/post'

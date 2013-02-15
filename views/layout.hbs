@@ -9,20 +9,14 @@
   <body>
   	<header class="navbar">
     <div class="navbar-inner navbar-fixed-top ">
-      <a class="brand" href="/"><i class="icon-camera-retro"></i> {{title}}</a>
+      <a class="brand" href="/"><i class="icon-camera-retro"></i> {{brand}}</a>
       <ul class="nav">
         <li><a href="/albums">Gallery</a></li>
-        <li><a href="/admin/post">Admin</a></li>
       </ul>
       <ul class="nav pull-right">
-            <li id="fat-menu" class="dropdown">
-              <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/post">Post</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/post">Post</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
+      </ul>
     </div>
   </header>
   <div id="content">
@@ -42,6 +36,7 @@
     </footer>
   	 <!-- Add jQuery library -->
   <script type="text/javascript" src="/js/lib/jquery-1.9.0.min.js"></script>
+
   <!-- Add mousewheel plugin (this is optional) -->
   <script type="text/javascript" src="/js/lib/jquery.mousewheel-3.0.6.pack.js"></script>
   <!-- Add fancyBox main JS and CSS files -->
@@ -56,11 +51,9 @@
   <!-- Add Media helper (this is optional) -->
   <script type="text/javascript" src="/js/source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
   <script type="text/javascript" src="/js/jQuery.BlackAndWhite.js"></script>
-  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('.dropdown-toggle').dropdown()
     $(".fancybox").fancybox({
     helpers : {
       title : {

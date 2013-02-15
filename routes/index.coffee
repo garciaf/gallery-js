@@ -6,13 +6,15 @@ config = require "#{__dirname}/../config/config.json"
 exports.index = (req, res) ->
   res.render "index",
     title: config.title
+    brand: config.title    
     description: config.description
 
 exports.albums = (req, res) ->
   Album.find (err, albums)->
     res.render "albums",
       name: "Albums"
-      title: config.title
+      title: "Albums"
+      brand: config.title
       albums: albums
 
 exports.album = (req, res) ->
@@ -20,7 +22,8 @@ exports.album = (req, res) ->
     albumName = req.params.folder
     res.render "album",
       name: albumName
-      title: config.title
+      title: albumName
+      brand: config.title      
       images: pictures
 
 exports.save = (req, res) ->
@@ -28,8 +31,9 @@ exports.save = (req, res) ->
   file = req.files.image
   Picture.save file, folder, (err, picture)->
     console.log picture
-    res.redirect "/post"
+    res.redirect "/admin/post"
 
 exports.post = (req, res) ->
   res.render "post",
-    title: config.title
+    title: "Post"
+    brand: config.title
