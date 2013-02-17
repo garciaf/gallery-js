@@ -15,9 +15,11 @@
     
     @thumbFolder: "thumb"
     
-    @thumbPath: "#{__dirname}/../#{config.upload_folder}/#{Picture.thumbFolder}"
+    @path: "/#{config.upload_folder}"
+
+    @thumbPath: "#{__dirname}/../public/#{Picture.path}/#{Picture.thumbFolder}"
     
-    @imagePath:"#{__dirname}/../#{config.upload_folder}/#{Picture.imageFolder}"
+    @imagePath:"#{__dirname}/../public/#{Picture.path}/#{Picture.imageFolder}"
 
     @find: (opts, cb) ->
       pictures = []
@@ -96,8 +98,8 @@
 
     getPath: ->
       if @folder? and @folder isnt ""
-        return @path =  "#{Picture.imageFolder}/#{@folder}/#{@fileName}"
-      return @path = "#{Picture.imageFolder}/#{@fileName}"
+        return @path =  "#{Picture.path}/#{Picture.imageFolder}/#{@folder}/#{@fileName}"
+      return @path = "#{Picture.path}/#{Picture.imageFolder}/#{@fileName}"
     isPicture: ->
       ext = @getExtension()
       lowerExt = "#{ext}".toLowerCase()
@@ -110,7 +112,7 @@
         cb(null, @thumb)
         return true
       if fs.existsSync "#{Picture.thumbPath}/#{@fileName}".replace('//', '/')
-        @thumb = "#{Picture.thumbFolder}/#{@fileName}"
+        @thumb = "#{Picture.path}/#{Picture.thumbFolder}/#{@fileName}".replace('//', '/')
         cb(null, @thumb)
         return true
       unless @isPicture()
@@ -124,7 +126,7 @@
         height: Picture.thumbSize
         (err, stdout, stderr) =>
           throw err  if err
-          @thumb = "#{Picture.thumbFolder}/#{@fileName}"
+          @thumb = "#{Picture.path}/#{Picture.thumbFolder}/#{@fileName}".replace('//', '/')
           cb(err, @thumb)
           return true
 

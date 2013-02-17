@@ -10,8 +10,8 @@
   class Album
     
     @imageFolder: "image"
-        
-    @imagePath:"#{__dirname}/../#{config.upload_folder}/#{Picture.imageFolder}"
+    
+    @imagePath: Picture.imagePath
 
     @find: (cb) ->
       albums = []
