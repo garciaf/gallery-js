@@ -10,32 +10,33 @@
   margin-top: 60px;
   border-top: 1px solid @grayDark;
   background-color: lighten(@navbarBackground, 6%);
-}
-
-.footer a {
-  color: @grayDarker;
+  .container{
+    width: 100%;
+  }
+  a {
+    color: @grayDarker;
   
   &:hover{
     text-decoration:none;
     color: @blueDark;
-
+    }
   }
-  
+  p {
+    margin-bottom: 0;
+    color: #777;
+  }
+}
 
-}
-.footer p {
-  margin-bottom: 0;
-  color: #777;
-}
-.footer-links {
+.container .footer-links {
   margin: 10px 0;
-}
-.footer-links li {
-  display: inline;
-  padding: 0 2px;
-}
-.footer-links li:first-child {
-  padding-left: 0;
+    width: 100%;
+  li {
+    display: inline;
+    padding: 0 2px;
+  }
+  li:first-child {
+    padding-left: 0;
+  }
 }
 
 //
