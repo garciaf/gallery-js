@@ -10,7 +10,6 @@
     "formidable": "*",
     "connect-form": "*",
     "hbs": "*",
-    "fs":"*",
     "util": "*",
     "MD5": "*",
     "imagemagick": "*",
