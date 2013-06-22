@@ -35,9 +35,9 @@ app.configure ->
   app.use lessMiddleware(
     dest: "#{__dirname}/public/css"
     src: "#{__dirname}/public/less"
-    once: false
+    once: true
     prefix: '/css'
-    debug: true
+    debug: false
     compress: true
   )  
   app.use express.static "#{__dirname}/public"
