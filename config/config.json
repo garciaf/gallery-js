@@ -1,6 +1,6 @@
 {
   "title": "Fabfoto",
-  "description": "The simpliest way to share and host picture. To take controle of <b>your</b> data.<small>Someone who like to own his data</small>",
-  "upload_folder": "upload/",
+  "description": "Have a look to my world ...",
+  "upload_folder": "upload",
   "thumb_size" : 256
 }
