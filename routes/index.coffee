@@ -8,6 +8,7 @@ exports.index = (req, res) ->
     title: config.title
     brand: config.title    
     description: config.description
+    layout: 'layout'
 
 exports.albums = (req, res) ->
   Album.find (err, albums)->
@@ -15,7 +16,9 @@ exports.albums = (req, res) ->
       name: "Albums"
       title: "Albums"
       brand: config.title
+      description: config.description
       albums: albums
+      layout: 'layout'
 
 exports.album = (req, res) ->
   Picture.find {folder: req.params.folder}, (err, pictures) ->
@@ -23,8 +26,10 @@ exports.album = (req, res) ->
     res.render "album",
       name: albumName
       title: albumName
-      brand: config.title      
+      brand: config.title
+      description: config.description
       images: pictures
+      layout: 'layout'
 
 exports.save = (req, res) ->
   folder = req.body.folder
@@ -37,3 +42,4 @@ exports.post = (req, res) ->
   res.render "post",
     title: "Post"
     brand: config.title
+    layout: 'layout_admin'

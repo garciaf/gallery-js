@@ -16,7 +16,7 @@ app.configure ->
   app.set "views", "#{__dirname}/views"
   app.set "view engine", "hbs"
   app.set 'view options',
-    layout: "layout"
+    layout: false
   app.use express.favicon()
   app.use express.bodyParser(
     keepExtensions: true

@@ -11,6 +11,7 @@ exports.login = (req, res) ->
     form: form.LoginForm.toHTML()
     title: 'login'
     brand: config.title
+    layout: 'layout_admin'
 
 
 exports.authenticate =  auth.passport.authenticate("local",
