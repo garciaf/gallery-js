@@ -1,19 +1,10 @@
-<div class="container">
-  <div class="row">
-  <div class= "span12">
-    <div class = "hero-unit">
-  <h1 class="text-center"><i class="icon-picture"></i> {{name}}</h1>
- </div>
-<ul class="thumbnails">
-  {{#each albums}}
-  <li class="thumbnail">
-    <a class="bwWrapper img-rounded" href="/albums/{{name}}"><img class="img-rounded" src="{{pictures.thumb}}"/></a>
-    <h3 class="text-center">{{name}}</h3>
-  </li>
-  {{/each}}
-</ul>
-  </div>
-  </div>
-
+<div id="header" class="item" data-width="350">
+  <h1>Differents place</h1>
+  <p>Differents times...</p>
 </div>
- 
+{{#each albums}}
+<article class="item" data-width="282">
+  <h2>{{name}}</h2>
+  <a href="/albums/{{name}}"><img src="{{pictures.thumb}}" alt=""></a>
+</article>
+{{/each}}

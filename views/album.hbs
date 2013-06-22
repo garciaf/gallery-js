@@ -1,21 +1,9 @@
-<div class="container">
-  <div class="row">
-  <div class= "span12">
-    <div class = "hero-unit">
-  <h1 class="text-center"><i class="icon-quote-left pull-left icon-muted"></i> {{name}}
-  <i class="icon-quote-right pull-right icon-muted"></i>
-  </h1>
- </div>
- <ul class="thumbnails">
-  {{#each images }}
-  <li>
-    <a class="fancybox" rel="group" href="{{path}}" >
-      <img src="{{thumb}}" class="img-rounded" />
-    </a>
-  </li>
-  {{/each}}
-  </ul>
-  </div>
-  </div>
+<div class="item info" data-width="282">
+  <h1>{{title}}</h1>
+  <p><a href="/albums">Back to albums</a></p>
 </div>
- 
+{{#each images }}
+<article class="item thumb" data-width="282">
+  <a href="{{path}}"><img src="{{thumb}}" alt=""></a>
+</article>
+{{/each}}
