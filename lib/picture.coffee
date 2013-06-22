@@ -126,7 +126,7 @@
         height: Picture.thumbSize
         (err, stdout, stderr) =>
           throw err  if err
-          @thumb = "#{Picture.path}/#{Picture.thumbFolder}/#{@fileName}".replace('//', '/')
+          @thumb = "#{Picture.path}#{Picture.thumbFolder}/#{@fileName}".replace('//', '/')
           cb(err, @thumb)
           return true
 
