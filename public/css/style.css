@@ -521,6 +521,13 @@
 		background: #66CCFF;
 		color: #fff;
 	}
+
+.info img
+	{
+		width: 100%;
+		display: block;
+		z-index: 1;
+	}
 	
 		#info:before
 		{
@@ -532,6 +539,27 @@
 			height: 100%;
 			background: url('images/overlay.png');
 		}
+
+.info h1
+	{	
+		width: 100%;
+		padding: 1.5em;
+		font-weight: 200;
+		text-align: center;
+	}
+.info h2
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: #1a1f2c;
+		background: rgba(18,21,29,0.85);
+		width: 100%;
+		padding: 1em;
+		font-weight: 200;
+		line-height: 1em;
+		z-index: 2;
+	}
 	
 /*********************************************************************************/
 /* Header                                                                        */

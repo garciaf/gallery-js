@@ -55,7 +55,6 @@
 
 	.info
 	{
-		padding: 3em 0 3em 0;
 		text-align: center;
 	}
 
@@ -63,6 +62,11 @@
 		{
 			font-size: 2.25em;
 			margin: 0 0 0.5em 0;
+		}
+
+		.Info h2
+		{
+			text-align: center;
 		}
 		
 		.info p
