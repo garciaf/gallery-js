@@ -50,8 +50,6 @@ app.post "/admin/file", routes.save
 
 app.get "/admin/post", routes.post
 
-app.get "/albums", routes.albums
-
 app.get "/login", security.login
 
 app.post "/login", security.authenticate, routes.post
@@ -60,7 +58,7 @@ app.get "/logout", security.logout
 
 app.get "/albums/:folder", routes.album
 
-app.get "/", routes.index
+app.get "/", routes.albums
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
